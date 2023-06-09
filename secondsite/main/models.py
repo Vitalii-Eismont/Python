@@ -15,6 +15,8 @@ class Task(models.Model):
     title = models.CharField('Name', max_length=50)
     text = models.TextField('Text')
     data = models.DateTimeField(blank=True, null=True)
+    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Ціна")
+    available = models.BooleanField(default=True, verbose_name='Наявність')
 
     def __str__(self):
         return self.title
